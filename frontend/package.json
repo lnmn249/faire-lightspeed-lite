@@ -1,0 +1,18 @@
+{
+  "name": "faire-lite-ui",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1",
+    "@vitejs/plugin-vue": "^5.0.5"
+  }
+}
