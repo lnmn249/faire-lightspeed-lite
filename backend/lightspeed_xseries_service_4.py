@@ -733,12 +733,19 @@ class OrderService:
                 continue
 
             # Create missing product first
+            outlet_id = self.secrets.get("OUTLET_ID")
             product_payload = {
                 "name": it.get("product_name") or it.get("product_name_f"),
                 "supplier_code": it.get("supplier_code") or it.get("SKU"),
                 "supplier_id": supplier_id,
-                "type": "standard",
-            }
+                "inventory": [
+                    {
+                        "outlet_id": outlet_id,
+                        "current_amount": 0
+                    }
+                ]
+                }
+
             if brand_id:
                 product_payload["brand_id"] = brand_id
             if cost not in (None, "", "NaN"):
